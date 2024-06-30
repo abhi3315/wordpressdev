@@ -1,4 +1,4 @@
-# WordPressDev, Copyright 2019 Google LLC
+# wpdev, Copyright 2019 Google LLC
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -10,7 +10,7 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
-name: wordpressdev
+name: wpdev
 
 recipe: wordpress
 
@@ -30,15 +30,15 @@ env_file:
 
 proxy:
   appserver_nginx:
-    - wordpressdev.lndo.site
-    - "*.wordpressdev.lndo.site"
+    - wpdev.lndo.site
+    - "*.wpdev.lndo.site"
 
 services:
   appserver:
     overrides:
       environment:
         # Support debugging with XDEBUG.
-        PHP_IDE_CONFIG: "serverName=wordpressdev.lndo.site"
+        PHP_IDE_CONFIG: "serverName=wpdev.lndo.site"
     install_dependencies_as_root:
       - bash bin/install-dependencies.sh
     run:
